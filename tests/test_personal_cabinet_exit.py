@@ -1,11 +1,10 @@
-from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import TestLocators
 
 def test_personal_cabinet(self, driver):
     driver.get(f"{self.URL}/login")
-    driver.find_element(*TestLocators.LOGIN_EMAIL_INPUT).send_keys("12345678901@mail.ru")
+    driver.find_element(*TestLocators.LOGIN_EMAIL_INPUT).send_keys("VyacheslavMelnikov_38@yandex.ru")
     driver.find_element(*TestLocators.LOGIN_PASS_INPUT).send_keys("olegoleg1")
     driver.find_element(*TestLocators.LOGIN_SUBMIT_BUTTON).click()
     
@@ -15,7 +14,7 @@ def test_personal_cabinet(self, driver):
 
 def test_personal_cabinet_is_exit(self, driver):   
     driver.get(f"{self.URL}/login")
-    driver.find_element(*TestLocators.LOGIN_EMAIL_INPUT).send_keys("12345678901@mail.ru")
+    driver.find_element(*TestLocators.LOGIN_EMAIL_INPUT).send_keys("VyacheslavMelnikov_38@yandex.ru")
     driver.find_element(*TestLocators.LOGIN_PASS_INPUT).send_keys("olegoleg1")
     driver.find_element(*TestLocators.LOGIN_SUBMIT_BUTTON).click()
     
