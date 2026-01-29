@@ -1,5 +1,6 @@
 from locators import TestLocators
 import pytest
+from urls import URL
 
 class TestTabs:
 
@@ -9,7 +10,7 @@ class TestTabs:
         TestLocators.TAB_SAUCES
         ])
     def test_construction_tabs(self, driver, locator):
-        driver.get(self.URL)
+        driver.get(URL)
         driver.find_element(*locator).click()
     
         assert "current" in driver.find_element(*locator).get_attribute("class")

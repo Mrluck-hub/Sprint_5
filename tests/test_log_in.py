@@ -2,11 +2,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import TestLocators
 import pytest
+from urls import URL
 
 class TestLogin:
     
-    URL = "https://stellarburgers.education-services.ru"
-
     @pytest.mark.parametrize("entry_point_url,login_locator", [
         (URL, TestLocators.MAIN_LOGIN_BUTTON), 
         (URL, TestLocators.HEADER_CABINET_BUTTON), 

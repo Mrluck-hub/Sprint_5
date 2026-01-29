@@ -2,6 +2,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import TestLocators
 import pytest
+from urls import URL
 
 class TestContructor:
     
@@ -10,7 +11,7 @@ class TestContructor:
                 TestLocators.HEADER_LOGO_BUTTON,
                 ])
         def test_open_constructor_from_profile(self, driver, locator):        
-                driver.get(self.URL)
+                driver.get(URL)
                 driver.find_element(*TestLocators.MAIN_LOGIN_BUTTON).click()
                 driver.find_element(*TestLocators.LOGIN_EMAIL_INPUT).send_keys("VyacheslavMelnikov_38@yandex.ru")
                 driver.find_element(*TestLocators.LOGIN_PASS_INPUT).send_keys("olegoleg1")
@@ -21,4 +22,4 @@ class TestContructor:
 
                 driver.find_element(*locator).click()
 
-                assert driver.current_url.rstrip('/') == self.URL 
+                assert driver.current_url.rstrip('/') == URL 
