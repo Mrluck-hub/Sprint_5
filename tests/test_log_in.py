@@ -3,7 +3,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from locators import TestLocators
 import pytest
 
-class TestRegistration:
+class TestLogin:
     
     URL = "https://stellarburgers.education-services.ru"
 
