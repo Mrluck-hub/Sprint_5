@@ -3,17 +3,13 @@ import pytest
 
 class TestTabs:
 
-    def test_constructor_tabs_sauces(self, driver):
+    @pytest.mark.parametrize("locator", [
+        TestLocators.TAB_FILLINGS,
+        TestLocators.TAB_BUNS,
+        TestLocators.TAB_SAUCES
+        ])
+    def test_construction_tabs(self, driver, locator):
         driver.get(self.URL)
-        driver.find_element(*TestLocators.TAB_SAUCES).click()
-        assert "current" in driver.find_element(*TestLocators.TAB_SAUCES).get_attribute("class")
-        
-    def test_constructor_tabs_fillings(self, driver):
-        driver.get(self.URL)
-        driver.find_element(*TestLocators.TAB_FILLINGS).click()
-        assert "current" in driver.find_element(*TestLocators.TAB_FILLINGS).get_attribute("class")
+        driver.find_element(*locator).click()
     
-    def test_constructor_tabs_buns(self, driver):
-        driver.get(self.URL)  
-        driver.find_element(*TestLocators.TAB_BUNS).click()
-        assert "current" in driver.find_element(*TestLocators.TAB_BUNS).get_attribute("class")
+        assert "current" in driver.find_element(*locator).get_attribute("class")
